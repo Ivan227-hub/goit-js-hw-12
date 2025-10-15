@@ -1,23 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Image Search — HW12</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <!-- simplelightbox and izitoast CSS будуть імпортовані в JS через node_modules, 
+         але залишаю локальний лінк на випадок, якщо хочете підключити CDN -->
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <main class="container">
+      <h1 class="title">Search images</h1>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <form id="search-form" class="search-form" autocomplete="off">
+        <input
+          id="search-input"
+          name="query"
+          type="text"
+          placeholder="Search images..."
+          required
+        />
+        <button type="submit" class="btn-search">Search</button>
+      </form>
+
+      <section>
+        <div id="gallery" class="gallery"></div>
+
+        <div class="controls">
+          <button id="load-more-btn" class="btn-load-more is-hidden">Load more</button>
+          <div id="loader" class="loader is-hidden" aria-hidden="true"></div>
+        </div>
+      </section>
     </main>
 
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
