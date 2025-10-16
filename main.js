@@ -1,5 +1,6 @@
 // src/main.js
-import { getImagesByQuery, PER_PAGE } from './pixabay-api';
+import './css/styles.css';
+import { getImagesByQuery, PER_PAGE } from './src/js/pixabay-api';
 import {
   createGallery,
   clearGallery,
@@ -9,7 +10,7 @@ import {
   hideLoadMoreButton,
   galleryEl,
   loadMoreBtn,
-} from './render-functions';
+} from './src/js/render-functions';
 
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
